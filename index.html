@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Louder Than Sirens</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: system-ui, sans-serif;
+      background: #0f0f0f;
+      color: #e5e5e5;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+      background: rgba(15,15,15,0.85);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.9);
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      text-align: center;
+      margin-bottom: 0.3em;
+      padding-top: 20px;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-top: 40px;
+      margin-bottom: 0.5em;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 1.5em;
+      text-align: center;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    a.btn, button {
+      display: inline-block;
+      background: #dc2626;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    a.btn:hover, button:hover {
+      background: #b91c1c;
+      transform: scale(1.05);
+    }
+
+    img.portrait {
+      width: 280px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin: 20px auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    img.portrait:hover {
+      transform: scale(1.05);
+    }
+
+    .excerpt {
+      background: rgba(255 255 255 / 0.05);
+      border-left: 5px solid #dc2626;
+      padding: 20px 30px;
+      font-style: italic;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+
+    form {
+      max-width: 480px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 0 auto 60px;
+    }
+
+    input, textarea {
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(255 255 255 / 0.1);
+      color: #e5e5e5;
+      font-size: 1rem;
+      resize: vertical;
+      transition: background 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      outline: 2px solid #dc2626;
+      background: rgba(255 255 255 / 0.15);
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    #address-error {
+      color: #f87171;
+      text-align: center;
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 40px;
+      padding-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.8rem; }
+      img.portrait { width: 90vw; height: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <h1>Louder Than Sirens</h1>
+    <p><em>A First Responder’s Memoir of Chaos, Trauma, and Emotional Survival</em></p>
+    <div class="btn-container">
+      <a href="https://www.amazon.com/dp/B0FG3L1DDP" target="_blank" class="btn">Pre-Order on Amazon</a>
+    </div>
+
+    <section>
+      <img src="Images/book-cover.jpg" alt="Book Cover" class="portrait" />
+      <h2>About the Book</h2>
+      <p>
+      In Louder Than Sirens, Austin Lynn takes readers deep into the chaotic and painful world of emergency medical services with raw honesty and emotional depth. He shares what it is really like to serve on the front lines, where tragedy is routine, the stakes are high, and the impact lingers long after the sirens fade.
+
+From devastating calls to the slow, silent weight of trauma, this gripping memoir captures the human side of EMS work. As each emergency chips away at his sense of self, Austin spirals into a darkness no training could have prepared him for.
+
+More than a behind-the-scenes look at first responders, Louder Than Sirens is a powerful story of survival, grief, and the long road back to healing. It is a voice for those who serve, and the heavy price they pay.
+      </p>
+    </section>
+
+    <section style="background: rgba(255 255 255 / 0.05); padding: 60px 20px; border-radius: 12px; margin: 40px 0;">
+      <h2>Signed Copies</h2>
+      <p>Want a personalized signed copy of <em>Louder Than Sirens</em>? Limited editions available. <strong>$39.99</strong></p>
+      <img src="Images/signed-copy.jpg" alt="Signed Copy" class="portrait" />
+
+      <form id="signed-copy-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="business" value="texbyte@icloud.com">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="item_name" value="Signed Copy - Louder Than Sirens">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="amount" value="39.99">
+
+        <input type="text" name="custom_name" placeholder="Your Name" required>
+        <input type="text" name="street" placeholder="Street Address" required>
+        <input type="text" name="city" placeholder="City" required>
+        <input type="text" name="state" placeholder="State (e.g. CA)" maxlength="2" required>
+        <input type="text" name="zip" placeholder="ZIP Code" required pattern="\d{5}">
+        <textarea name="custom_message" placeholder="Personalized message (optional)"></textarea>
+
+        <input type="hidden" name="custom" id="paypalCustomField" value="">
+        <p id="address-error">Please enter a valid address (State = 2 letters, ZIP = 5 digits).</p>
+
+        <button type="submit">Pay $39.99 via PayPal</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>About the Author</h2>
+      <p>
+        Austin spent nearly a decade working in EMS, including two hurricane relief deployments. He now writes about the mental health challenges faced by first responders and the realities many are afraid to speak about.
+      </p>
+      <img src="Images/author-photo.jpg" alt="Author Photo" class="portrait" />
+    </section>
+
+    <section>
+      <h2>Excerpt</h2>
+      <div class="excerpt">
+        “There’s a moment between the call and the chaos where everything stands still —
+        that’s where the fear lives. But you push past it, every single time.”
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact for Media / Events</h2>
+      <form action="https://formspree.io/f/manbopdv" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <script>document.write(new Date().getFullYear())</script> Austin Lynn. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('signed-copy-form').addEventListener('submit', function(e) {
+      const name = document.getElementsByName('custom_name')[0].value.trim();
+      const street = document.getElementsByName('street')[0].value.trim();
+      const city = document.getElementsByName('city')[0].value.trim();
+      const state = document.getElementsByName('state')[0].value.trim().toUpperCase();
+      const zip = document.getElementsByName('zip')[0].value.trim();
+      const message = document.getElementsByName('custom_message')[0].value.trim();
+      const addressError = document.getElementById('address-error');
+
+      const zipRegex = /^\d{5}$/;
+      const stateRegex = /^[A-Z]{2}$/;
+
+      if (!zipRegex.test(zip) || !stateRegex.test(state)) {
+        e.preventDefault();
+        addressError.style.display = 'block';
+        return false;
+      }
+
+      addressError.style.display = 'none';
+
+      document.getElementById('paypalCustomField').value =
+        'Name: ' + name +
+        '; Address: ' + street + ', ' + city + ', ' + state + ' ' + zip +
+        '; Message: ' + message;
+    });
+  </script>
+
+</body>
+</html>
